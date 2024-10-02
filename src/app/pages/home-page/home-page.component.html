@@ -1,25 +1,5 @@
-<p>home-page works!</p><mat-toolbar>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
-    </button>
-    <span>My App</span>
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>share</mat-icon>
-    </button>
-</mat-toolbar>
-
-<mat-slide-toggle>Toggle me!</mat-slide-toggle>
-<p><mat-slide-toggle>Slide me!</mat-slide-toggle></p>
-<p><mat-slide-toggle labelPosition="before">...and slide me too!</mat-slide-toggle></p>
-<mat-form-field>
-    <mat-label>Input</mat-label>
-    <input matInput>
-</mat-form-field>
-<mat-form-field>
-    <mat-label>Textarea</mat-label>
-    <textarea matInput></textarea>
-</mat-form-field>
+<app-toolbar />
+<div class="d-flex overflow-x-auto white-space-nowrap">
+    <app-image *ngFor="let image of images" [src]="image" name="Image" />
+</div>
+<app-image-picker [icon]="icons.cloud_upload" (fileSelected)="imagesSelected($event)" />

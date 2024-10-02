@@ -1,0 +1,12 @@
+<mat-toolbar class="w-100">
+    <button mat-icon-button>
+        <mat-icon>{{icons.menu}}</mat-icon>
+    </button>
+    <app-text [text]="strings.shotScreen"></app-text>
+    <span class="w-100"></span>
+    <app-language></app-language>
+    <app-theme></app-theme>
+    <button mat-icon-button (click)="share()">
+        <mat-icon>{{icons.share}}</mat-icon>
+    </button>
+</mat-toolbar>
