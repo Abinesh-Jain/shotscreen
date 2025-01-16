@@ -1,0 +1,10 @@
+<div cdkDropList class="w-100" (cdkDropListDropped)="drop($event)">
+    @for (movie of movies; track movie) {
+    <mat-card appearance="outlined" cdkDrag>
+        <mat-card-content>
+            {{movie.title}}
+            <img *cdkDragPreview [src]="movie.poster" [alt]="movie.title">
+        </mat-card-content>
+    </mat-card>
+    }
+</div>

@@ -3,3 +3,5 @@
     <app-image *ngFor="let image of images" [src]="image" name="Image" />
 </div>
 <app-image-picker [icon]="icons.cloud_upload" (fileSelected)="imagesSelected($event)" />
+<app-sidenav />
+<app-drag-and-drop />

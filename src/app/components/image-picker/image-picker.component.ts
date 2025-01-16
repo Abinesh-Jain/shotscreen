@@ -20,11 +20,15 @@ export class ImagePickerComponent {
     if (event.target.files && event.target.files.length) {
       const files = event.target.files;
       this.images = [];
+      let filesRead = 0;
       for (let file of files) {
         const reader = new FileReader();
         reader.onload = (e: any) => {
           this.images.push(e.target.result);
-          this.fileSelected.emit(this.images);
+          filesRead++;
+          if (filesRead === files.length) {
+            this.fileSelected.emit(this.images);
+          }
         };
         reader.readAsDataURL(file);
       }
