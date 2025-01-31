@@ -1,5 +1,5 @@
-<mat-toolbar class="w-100 position-sticky top-0">
-    <button *ngIf="!showBackButton" mat-icon-button>
+<mat-toolbar class="w-100">
+    <button *ngIf="!showBackButton" mat-icon-button (click)="onLeadingIconClick()">
         <mat-icon>{{icons.menu}}</mat-icon>
     </button>
     <app-back-button *ngIf="showBackButton"></app-back-button>

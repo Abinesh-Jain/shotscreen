@@ -5,12 +5,14 @@ import {
   CdkDragPreview,
   CdkDrag,
   moveItemInArray,
+  CdkDragPlaceholder,
 } from '@angular/cdk/drag-drop';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 @Component({
   selector: 'app-drag-and-drop',
   standalone: true,
-  imports: [CdkDropList, CdkDrag, CdkDragPreview, MatCardModule],
+  imports: [CdkDropList, CdkDrag, CdkDragPreview, MatCardModule, CdkDragPlaceholder, MatButtonModule],
   templateUrl: './drag-and-drop.component.html',
   styleUrl: './drag-and-drop.component.scss'
 })
@@ -63,4 +65,5 @@ export class DragAndDropComponent {
   drop(event: CdkDragDrop<{ title: string; poster: string }[]>) {
     moveItemInArray(this.movies, event.previousIndex, event.currentIndex);
   }
+
 }

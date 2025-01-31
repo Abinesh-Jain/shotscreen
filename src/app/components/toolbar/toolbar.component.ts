@@ -29,6 +29,10 @@ export class ToolbarComponent {
 
   @Input() notification: boolean = true;
 
+  @Input() onLeadingIconClick: () => void = () => {
+    console.log('Leading icon clicked');
+  };
+
   share() {
     navigator.share({
       text: 'Shotscreen'

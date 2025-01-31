@@ -1,15 +1,13 @@
-import { Component } from '@angular/core';
-import { ImagePickerComponent } from "../../components/image-picker/image-picker.component";
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { ToolbarComponent } from "../../components/toolbar/toolbar.component";
 import { CommonModule } from '@angular/common';
-import { ImageComponent } from "../../components/image/image.component";
 import { Icons } from '../../utils/icons';
-import { SidenavComponent } from "../../components/sidenav/sidenav.component";
 import { DragAndDropComponent } from "../../components/drag-and-drop/drag-and-drop.component";
+import { MatDrawer, MatSidenavModule } from '@angular/material/sidenav';
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [ImagePickerComponent, ToolbarComponent, CommonModule, ImageComponent, SidenavComponent, DragAndDropComponent],
+  imports: [ToolbarComponent, CommonModule, DragAndDropComponent, MatSidenavModule],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss'
 })
@@ -17,9 +15,18 @@ export class HomePageComponent {
 
   icons = Icons;
 
-  images: string[] = [];
+  @ViewChild('drawer') drawer!: any;
 
-  imagesSelected(images: string[]) {
-    this.images.push(...images)
+  toggleDrawerFunc: () => void;
+
+  constructor() {
+    this.toggleDrawerFunc = this.toggleDrawer.bind(this);
   }
+
+  toggleDrawer() {
+    if (this.drawer) {
+      this.drawer.toggle();
+    }
+  }
+
 }
