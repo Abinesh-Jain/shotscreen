@@ -3,6 +3,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button'
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { ThemeComponent } from "../theme/theme.component";
 import { LanguageComponent } from "../language/language.component";
 import { TextComponent } from "../text/text.component";
@@ -14,7 +15,7 @@ import { BackButtonComponent } from "../back-button/back-button.component";
 @Component({
   selector: 'app-toolbar',
   standalone: true,
-  imports: [MatButtonModule, MatIconModule, MatToolbarModule, ThemeComponent, LanguageComponent, TextComponent, MatBadgeModule, RouterModule, CommonModule, BackButtonComponent],
+  imports: [MatButtonModule, MatIconModule, MatToolbarModule, ThemeComponent, LanguageComponent, TextComponent, MatBadgeModule, RouterModule, CommonModule, BackButtonComponent, MatTooltipModule],
   templateUrl: './toolbar.component.html',
   styleUrl: './toolbar.component.scss'
 })
@@ -29,9 +30,7 @@ export class ToolbarComponent {
 
   @Input() notification: boolean = true;
 
-  @Input() onLeadingIconClick: () => void = () => {
-    console.log('Leading icon clicked');
-  };
+  @Input() onLeadingIconClick: () => void = () => { };
 
   share() {
     navigator.share({

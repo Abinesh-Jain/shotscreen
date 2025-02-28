@@ -1,16 +1,16 @@
-<mat-toolbar class="w-100">
+<mat-toolbar>
     <button *ngIf="!showBackButton" mat-icon-button (click)="onLeadingIconClick()">
         <mat-icon>{{icons.menu}}</mat-icon>
     </button>
     <app-back-button *ngIf="showBackButton"></app-back-button>
     <app-text [text]="title"></app-text>
     <span class="w-100"></span>
-    <button *ngIf="notification" mat-icon-button routerLink="/notification">
-        <mat-icon matBadge="2">{{icons.notifications}}</mat-icon>
+    <button *ngIf="notification" mat-icon-button routerLink="/notification" matTooltip="Notification">
+        <mat-icon matBadge="2" aria-hidden="false">{{icons.notifications}}</mat-icon>
     </button>
-    <app-language></app-language>
-    <app-theme></app-theme>
-    <button mat-icon-button (click)="share()">
+    <app-language matTooltip="Language"></app-language>
+    <app-theme matTooltip="Theme"></app-theme>
+    <button mat-icon-button (click)="share()" matTooltip="Share">
         <mat-icon>{{icons.share}}</mat-icon>
     </button>
 </mat-toolbar>

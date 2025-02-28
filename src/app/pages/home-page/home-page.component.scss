@@ -1,0 +1,141 @@
+/* Home Page Styling */
+.home-container {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(45deg, #ff6a00, #ee0979, #ff6a00);
+    /* Stunning gradient background */
+    background-size: 400% 400%;
+    animation: gradientBackground 15s ease infinite;
+    /* Gradient animation */
+    padding: 20px;
+    min-height: 100vh;
+    color: white;
+    overflow: hidden;
+    /* Prevent scrolling on larger screens */
+}
+
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+}
+
+.intro {
+    max-width: 800px;
+    margin: auto;
+    padding: 40px 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+    /* Lightened background for better contrast */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+    /* Allow scrolling for mobile if content overflows */
+}
+
+.subheading {
+    color: #3f51b5;
+    font-weight: 600;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.info-box {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.description {
+    color: #757575;
+    margin-bottom: 1rem;
+}
+
+.description-text {
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.action-buttons .action-btn {
+    padding: 12px 24px;
+    font-size: 1.2rem;
+}
+
+.action-buttons button {
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+.action-buttons button:hover {
+    transform: translateY(-2px);
+    transition: 0.3s;
+}
+
+.fun-fact-box {
+    background-color: #fff3e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.fun-fact {
+    font-size: 1.1rem;
+    color: #6a1b9a;
+    font-style: italic;
+}
+
+/* Media Queries */
+
+/* For larger screens, disable vertical scrolling */
+@media (min-width: 1024px) {
+    .home-container {
+        overflow: hidden;
+        /* Prevent scroll */
+    }
+
+    .intro {
+        max-height: calc(100vh - 100px);
+        /* Limit height to viewport height */
+        overflow: hidden;
+        /* Prevent overflow */
+    }
+}
+
+/* For mobile and smaller screens, enable scrolling */
+@media (max-width: 768px) {
+    .home-container {
+        overflow: auto;
+        /* Allow scrolling on mobile */
+    }
+
+    .intro {
+        padding: 20px;
+        max-height: none;
+        /* Allow content to extend beyond viewport */
+    }
+
+    .heading {
+        font-size: 2rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ToolbarComponent } from "../../components/toolbar/toolbar.component";
 import { MatListModule } from '@angular/material/list';
+import { Strings } from '../../utils/strings';
 
 @Component({
   selector: 'app-notification-page',
@@ -10,5 +11,5 @@ import { MatListModule } from '@angular/material/list';
   styleUrl: './notification-page.component.scss'
 })
 export class NotificationPageComponent {
-
+  strings = Strings;
 }

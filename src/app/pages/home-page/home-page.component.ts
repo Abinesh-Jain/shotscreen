@@ -1,32 +1,15 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
-import { ToolbarComponent } from "../../components/toolbar/toolbar.component";
-import { CommonModule } from '@angular/common';
-import { Icons } from '../../utils/icons';
-import { DragAndDropComponent } from "../../components/drag-and-drop/drag-and-drop.component";
-import { MatDrawer, MatSidenavModule } from '@angular/material/sidenav';
+import { Component } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { RouterModule } from '@angular/router';
+import { ParticlesComponent } from "../../components/particles/particles.component";
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [ToolbarComponent, CommonModule, DragAndDropComponent, MatSidenavModule],
+  imports: [MatButtonModule, MatTooltipModule, RouterModule, ParticlesComponent],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss'
 })
 export class HomePageComponent {
-
-  icons = Icons;
-
-  @ViewChild('drawer') drawer!: any;
-
-  toggleDrawerFunc: () => void;
-
-  constructor() {
-    this.toggleDrawerFunc = this.toggleDrawer.bind(this);
-  }
-
-  toggleDrawer() {
-    if (this.drawer) {
-      this.drawer.toggle();
-    }
-  }
 
 }

@@ -1,18 +1,14 @@
 <div class="d-flex overflow-x-auto h-100" cdkDropList cdkDropListOrientation="horizontal"
     (cdkDropListDropped)="drop($event)">
     @for (movie of movies; track movie) {
-    <mat-card appearance="outlined" cdkDrag>
-        <mat-card-header class="h-20">
-            <mat-card-title>{{movie.title}}</mat-card-title>
-        </mat-card-header>
-        <img mat-card-image [src]="movie.poster" [alt]="movie.title">
+    <div class="p-1" cdkDrag>
+        <app-screen>
+            <img class="img-fluid" mat-card-image [src]="movie.poster" [alt]="movie.title">
+        </app-screen>
         <img *cdkDragPreview [src]="movie.poster" [alt]="movie.title">
-        <mat-card *cdkDragPlaceholder style="filter: blur(5px);">
-            <mat-card-header class="h-20">
-                <mat-card-title>{{movie.title}}</mat-card-title>
-            </mat-card-header>
-            <img mat-card-image [src]="movie.poster" [alt]="movie.title">
-        </mat-card>
-    </mat-card>
+        <app-screen *cdkDragPlaceholder style="filter: blur(5px);">
+            <img class="img-fluid" mat-card-image [src]="movie.poster" [alt]="movie.title">
+        </app-screen>
+    </div>
     }
 </div>

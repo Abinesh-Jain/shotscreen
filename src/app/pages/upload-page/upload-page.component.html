@@ -1,0 +1,13 @@
+<div class="d-flex flex-column">
+    <app-toolbar [onLeadingIconClick]="toggleDrawerFunc" />
+    <mat-drawer-container autosize>
+        <div class="p-3">
+            <app-drag-and-drop />
+        </div>
+        <mat-drawer #drawer mode="side" autoSize="true">
+            <div class="dvw-25 p-3">
+                <app-drawer [devices]="devices" (deviceSelected)="deviceSelected($event)" [deviceSpecs]="deviceSpecs" />
+            </div>
+        </mat-drawer>
+    </mat-drawer-container>
+</div>

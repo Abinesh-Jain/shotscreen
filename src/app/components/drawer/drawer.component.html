@@ -1,0 +1,17 @@
+<mat-form-field>
+    <mat-label>Select Device</mat-label>
+    <mat-select (valueChange)="valueChanged($event)">
+        @for (device of devices; track $index) {
+        <mat-option [value]="device">
+            {{device.device}}
+        </mat-option>
+        }
+    </mat-select>
+</mat-form-field>
+@for (deviceSpec of deviceSpecs; track $index) {
+<h1>{{deviceSpec['size']}}</h1>
+<img (click)="onImageClick(deviceSpec)" class="img-fluid" src="{{deviceSpec['icon']}}" alt="{{deviceSpec['size']}}" />
+<a href="javascript:void(0)" (click)="downloadImage(deviceSpec['icon'], deviceSpec['size'])">
+    Download Image
+</a>
+}
